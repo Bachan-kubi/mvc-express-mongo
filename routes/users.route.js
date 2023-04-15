@@ -5,8 +5,9 @@ const usersControllers = require('../controllers/usersControllers');
 
 router
     .get('/api/users', usersControllers.getAllUsers)
-    .post('/api/users', usersControllers.getOneUsers)
-    .put('/api/users/:id', usersControllers.updateUsers)
+    .get('/api/users/:id', usersControllers.getOneUsers)
+    .post('/api/users', usersControllers.createUsers)
+    .patch('/api/users/:id', usersControllers.updateUsers)
     .delete('/api/users/:id', usersControllers.deleteUsers)
 
 

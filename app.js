@@ -1,17 +1,17 @@
 const express = require('express');
+const app = express();
 const cors = require('cors');
 const usersRouter = require('./routes/users.route');
 const productsRouter = require('./routes/products.route');
 
-const db = require('./config/db');
 
-const app = express();
+const dbURI = require('./config/db');
+
 
 // middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-
 
 app.use('/', usersRouter);
 app.use('/', productsRouter);
