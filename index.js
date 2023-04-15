@@ -1,8 +1,11 @@
 const app = require("./app");
-const port = process.env.PORT || 5000;
+const config = require('./config/config');
+
+
+const PORT = config.app.port;
 
 
 
-app.listen(port, ()=>{
-    console.log(`mvc is running on ${port}`)
+app.listen(PORT, ()=>{
+    console.log(`mvc is running on ${PORT}`);
 });

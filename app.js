@@ -1,6 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 const usersRouter = require('./routes/users.route');
+const productsRouter = require('./routes/products.route');
+
+const db = require('./config/db');
 
 const app = express();
 
@@ -11,6 +14,7 @@ app.use(express.urlencoded({extended: true}));
 
 
 app.use('/', usersRouter);
+app.use('/', productsRouter);
 
 // api/users : GET
 // api/users/:id : GET
